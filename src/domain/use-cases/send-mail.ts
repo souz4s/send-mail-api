@@ -1,7 +1,7 @@
 import { AuthModel, MailModel } from "@/domain/models";
 
 export interface SendMail {
-  perform: (params: SendMail.Params) => Promise<null>;
+  perform: (params: SendMail.Params) => Promise<void>;
 }
 
 export namespace SendMail {

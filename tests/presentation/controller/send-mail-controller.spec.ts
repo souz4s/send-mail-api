@@ -14,4 +14,10 @@ describe("SendMailController", () => {
     await sut.handle(mockSendMailParams());
     expect(sendMailSpy.callsCount).toBe(1);
   });
+
+  it("should return the status created when sending mail", async () => {
+    const { sut } = makeSut();
+    const result = await sut.handle(mockSendMailParams());
+    expect(result.statusCode).toBe(201);
+  });
 });

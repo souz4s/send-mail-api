@@ -2,13 +2,14 @@ import { SendMail } from "@/domain/use-cases";
 
 import { faker } from "@faker-js/faker";
 
+const user = faker.internet.email();
 export const mockSendMailParams = (): SendMail.Params => ({
   auth: {
-    user: faker.internet.email(),
+    user: user,
     pass: faker.internet.password(20),
   },
   mailModel: {
-    from: faker.internet.email(),
+    from: user,
     to: faker.internet.email(),
     subject: faker.lorem.words(),
     text: faker.lorem.text(),

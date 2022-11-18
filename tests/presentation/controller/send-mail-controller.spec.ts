@@ -41,4 +41,14 @@ describe("SendMailController", () => {
     expect(sendMailSpy.callsCount).toBe(0);
     expect(result.statusCode).toBe(406);
   });
+
+  it("should return the internal server error when sendMail throws error", async () => {
+    const { sut, sendMailSpy } = makeSut();
+    jest.spyOn(sendMailSpy, "perform").mockImplementationOnce(() => {
+      throw new Error().stack;
+    });
+    const result = await sut.handle(mockSendMailParams());
+    expect(sendMailSpy.callsCount).toBe(0);
+    expect(result.statusCode).toBe(500);
+  });
 });

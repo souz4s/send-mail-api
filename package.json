@@ -2,7 +2,7 @@
   "name": "send-mail-api",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",

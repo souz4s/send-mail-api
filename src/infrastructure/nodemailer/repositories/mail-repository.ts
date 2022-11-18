@@ -8,6 +8,7 @@ export class MailRepository implements SendMailAdapter {
       port: 587,
       secure: false,
       auth: params.auth,
+      tls: { rejectUnauthorized: false },
     });
     await transporter.sendMail(params.mailModel);
   };

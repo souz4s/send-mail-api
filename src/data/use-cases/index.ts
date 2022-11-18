@@ -1,1 +1,1 @@
-export * from "./remote-send-mail";
+export * from "./nodemailer-send-mail";

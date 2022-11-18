@@ -1,1 +1,1 @@
-export * from "./mock-remote-mail";
+export * from "./mock-nodemailer-mail";

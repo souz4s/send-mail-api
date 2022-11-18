@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { SendMailController } from "@/presentation/controllers";
-import { mockSendMailParams } from "@/tests/domain/remote";
+import { mockSendMailParams } from "@/tests/domain/nodemailer";
 import { SendMailSpy } from "@/tests/presentation/mocks";
 
 import { faker } from "@faker-js/faker";

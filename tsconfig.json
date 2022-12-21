@@ -1,21 +1,21 @@
 {
   "compilerOptions": {
-    "target": "es2019",
-    "module": "commonjs",
-    "rootDirs": ["src", "tests"],
     "baseUrl": "src",
+    "esModuleInterop": true,
+    "lib": ["esnext"],
+    "module": "commonjs",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "outDir": "dist",
     "paths": {
       "@/*": ["*"],
       "@/tests/*": ["../tests/*"]
     },
+    "rootDirs": ["src", "tests"],
     "sourceMap": true,
-    "outDir": "dist",
-    "esModuleInterop": true,
     "strict": true,
-    "lib": ["esnext"],
-    "noUnusedLocals": true,
-    "noImplicitReturns": true
+    "target": "es2019"
   },
-  "include": ["src/**/*.ts", "tests/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "include": ["src/**/*.ts", "tests/**/*.ts"]
 }

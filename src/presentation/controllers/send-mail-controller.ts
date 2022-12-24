@@ -9,7 +9,9 @@ export class SendMailController implements Controller {
   handle = async (request: SendMailController.Request): Promise<SendMailController.Response> => {
     const { auth, mailModel } = request;
     if (!auth || !mailModel.from || !mailModel.to) return HttpHelper.BAD_REQUEST(new MissingParametersError());
-    if (auth.user !== mailModel.from) return HttpHelper.NOT_ACCEPTABLE("The user's email cannot be different from the sender's email.");
+    const fromValue = mailModel.from.match(/<(.*)>/)?.[1];
+    const from = fromValue || mailModel.from;
+    if (auth.user !== from) return HttpHelper.NOT_ACCEPTABLE("The user's email cannot be different from the sender's email.");
     try {
       await this.sendMail.perform(request);
       return HttpHelper.CREATED();

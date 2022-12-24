@@ -14,7 +14,6 @@ export const expressRouterAdapter = (controller: Controller) => {
       res.status(httpResponse.statusCode).json(httpResponse.body);
     } else {
       res.status(httpResponse.statusCode).json({
-        ...httpResponse.body,
         message: httpResponse.body as string,
       });
     }

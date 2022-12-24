@@ -1,4 +1,3 @@
-import { InternalServerError } from "@/presentation/erros";
 import { HttpResponse } from "@/presentation/protocols";
 
 export class HttpHelper {
@@ -7,9 +6,9 @@ export class HttpHelper {
     message: "Successfully created",
   });
 
-  static BAD_REQUEST = (err: Error): HttpResponse<Error> => ({
+  static BAD_REQUEST = (error: string | object): HttpResponse<string | object> => ({
     statusCode: 400,
-    body: err,
+    body: error,
   });
 
   static NOT_ACCEPTABLE = <T>(data: T): HttpResponse<T> => ({
@@ -18,8 +17,8 @@ export class HttpHelper {
     message: "Sending rejected",
   });
 
-  static INTERNAL_SERVER_ERROR = (err: Error): HttpResponse<Error> => ({
+  static INTERNAL_SERVER_ERROR = (error: string | object): HttpResponse<string | object> => ({
     statusCode: 500,
-    body: new InternalServerError(err.stack || ""),
+    body: error,
   });
 }

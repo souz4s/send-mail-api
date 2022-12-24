@@ -14,7 +14,6 @@ export class HttpHelper {
   static NOT_ACCEPTABLE = <T>(data: T): HttpResponse<T> => ({
     statusCode: 406,
     body: data,
-    message: "Sending rejected",
   });
 
   static INTERNAL_SERVER_ERROR = (error: string | object): HttpResponse<string | object> => ({

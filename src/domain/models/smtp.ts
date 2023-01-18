@@ -1,4 +1,4 @@
-import { AuthModel, TlsModel } from "@/domain/models";
+import { AuthModel, TlsModel } from "../models";
 
 export type SmtpModel = {
   host: string;

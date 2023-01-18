@@ -1,0 +1,18 @@
+# Deno specific files
+.deno_plugins.ts
+.deno_plugins.js
+.lock.json
+
+# Compiled files
+*.js
+*.js.map
+
+# Logs and databases
+*.log
+*.db
+
+# Dependency directories
+deps/
+
+# Test files
+tests/

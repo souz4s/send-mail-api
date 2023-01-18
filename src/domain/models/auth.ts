@@ -1,4 +1,4 @@
-export type AuthMode = {
+export type AuthModel = {
   user: string;
   pass: string;
 };

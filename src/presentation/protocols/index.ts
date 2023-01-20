@@ -1,2 +1,2 @@
-export * from "./controller";
-export * from "./http-response";
+export * from "./controller.ts";
+export * from "./http-response.ts";

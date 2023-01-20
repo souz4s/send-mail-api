@@ -1,4 +1,4 @@
-import { AuthModel, MailModel } from "../../domain/models";
+import { AuthModel, MailModel } from "../../domain/models/index.ts";
 
 export interface SendMailAdapter {
   sendMail(params: SendMailAdapter.Params): void;

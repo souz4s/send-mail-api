@@ -1,5 +1,5 @@
-import { HttpResponse } from "../protocols";
-import { HttpError } from "../helpers";
+import { HttpResponse } from "../protocols/index.ts";
+import { HttpError } from "../helpers/index.ts";
 
 export class HttpHelper {
   static CREATED = (): HttpResponse<void> => ({

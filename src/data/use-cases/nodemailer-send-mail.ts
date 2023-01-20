@@ -1,5 +1,5 @@
-import { SendMail } from "../../domain/use-cases";
-import { SendMailAdapter } from "../protocols";
+import { SendMail } from "../../domain/use-cases/index.ts";
+import { SendMailAdapter } from "../protocols/index.ts";
 
 export class NodemailerSendMail implements SendMail {
   constructor(private sendMailAdapter: SendMailAdapter) {}

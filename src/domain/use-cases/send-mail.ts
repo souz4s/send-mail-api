@@ -1,4 +1,4 @@
-import { AuthModel, MailModel } from "../models";
+import { AuthModel, MailModel } from "../models/index.ts";
 
 export interface SendMail {
   perform: (params: SendMail.Params) => Promise<void>;

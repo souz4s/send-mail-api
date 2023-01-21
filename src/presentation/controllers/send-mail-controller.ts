@@ -7,8 +7,8 @@ import { Controller, HttpResponse } from "../protocols/index.ts";
 export class SendMailController implements Controller {
   constructor(private readonly sendMail: SendMail) {}
   async handle(
-    request: SendMailController.Request,
-  ): Promise<HttpResponse<SendMailController.Response>> {
+    request: SendMailControllerRequest,
+  ): Promise<HttpResponse<SendMailControllerResponse>> {
     const auth = request["auth"] as AuthModel;
     const mailModel = request["mailModel"] as MailModel;
     if (!auth || !mailModel.from || !mailModel.to) {
@@ -32,7 +32,5 @@ export class SendMailController implements Controller {
   }
 }
 
-export declare namespace SendMailController {
-  export type Request = Record<string, unknown>;
-  export type Response = Record<string, unknown>;
-}
+export type SendMailControllerRequest = Record<string, unknown>;
+export type SendMailControllerResponse = Record<string, unknown>;

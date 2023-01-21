@@ -4,7 +4,8 @@ import { SMTPClient } from "../../denomailer/index.ts";
 import "https://deno.land/x/dotenv@v3.2.0/load.ts";
 
 export class MailRepository implements SendMailAdapter {
-  constructor(private client: SMTPClient | undefined) {}
+  private client: SMTPClient | undefined;
+  constructor() {}
   async sendMail(params: SendMailAdapter.Params): Promise<void> {
     try {
       const connectionOptions = {

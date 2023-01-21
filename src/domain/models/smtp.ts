@@ -1,9 +1,8 @@
-import { AuthModel, TlsModel } from "../models/index.ts";
+import { AuthModel } from "../models/index.ts";
 
 export type SmtpModel = {
-  host: string;
+  hostname: string;
   port: number;
-  secure: boolean;
+  tls: boolean;
   auth: AuthModel;
-  tls: TlsModel;
 };

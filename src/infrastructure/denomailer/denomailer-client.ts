@@ -1,3 +1,3 @@
-import * as denomailer from "https://deno.land/x/denomailer@1.5.2/mod.ts";
+import { SMTPClient } from "https://deno.land/x/denomailer@1.5.2/mod.ts";
 
-export const denomailerClient = denomailer;
+export { SMTPClient };

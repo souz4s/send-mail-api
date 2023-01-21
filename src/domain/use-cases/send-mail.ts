@@ -1,7 +1,7 @@
 import { AuthModel, MailModel } from "../models/index.ts";
 
 export interface SendMail {
-  perform: (params: SendMail.Params) => Promise<void>;
+  perform(params: SendMail.Params): void;
 }
 
 export declare namespace SendMail {

@@ -1,1 +1,1 @@
-export * from "./missing-parameters-error";
+export * from "./missing-parameters-error.ts";

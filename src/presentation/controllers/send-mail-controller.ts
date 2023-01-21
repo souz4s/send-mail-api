@@ -16,9 +16,11 @@ export class SendMailController implements Controller {
         new MissingParametersError() as unknown as HttpError,
       );
     }
-    const fromValue = mailModel.from.match(/<(.*)>/)?.[1];
-    const from = fromValue || mailModel.from;
-    if (auth.username != from) {
+    const extractValue = (string: string | null | undefined) =>
+      (string ? string : "").match(/<(.*)>/)?.[1] || string;
+    const toValue = extractValue(auth.username);
+    const fromValue = extractValue(mailModel.from);
+    if (toValue !== fromValue) {
       return HttpHelper.NOT_ACCEPTABLE({
         data: "The user's email cannot be different from the sender's email.",
       });

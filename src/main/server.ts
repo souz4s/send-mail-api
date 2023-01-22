@@ -2,7 +2,7 @@ import { App, Env } from "./config/index.ts";
 
 const startServer = async () => {
   try {
-    const app = await App();
+    const app = App();
     app.addEventListener(
       "listen",
       () => console.log(`\n> Server is running on port ${Env.PORT}`),

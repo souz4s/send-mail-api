@@ -11,7 +11,7 @@ export class SendMailController implements Controller {
   ): Promise<HttpResponse<SendMailControllerResponse>> {
     const auth = request["auth"] as AuthModel;
     const mailModel = request["mailModel"] as MailModel;
-    if (!auth || !mailModel.from || !mailModel.to) {
+    if (!auth || !mailModel.from || !mailModel.to || !mailModel.subject) {
       return HttpHelper.BAD_REQUEST(
         new MissingParametersError() as unknown as HttpError,
       );

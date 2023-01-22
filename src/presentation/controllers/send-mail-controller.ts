@@ -16,15 +16,6 @@ export class SendMailController implements Controller {
         new MissingParametersError() as unknown as HttpError,
       );
     }
-    const extractValue = (string: string | null | undefined) =>
-      (string ? string : "").match(/<(.*)>/)?.[1] || string;
-    const toValue = extractValue(auth.username);
-    const fromValue = extractValue(mailModel.from);
-    if (toValue !== fromValue) {
-      return HttpHelper.NOT_ACCEPTABLE({
-        data: "The user's email cannot be different from the sender's email.",
-      });
-    }
     try {
       await this.sendMail.perform({ auth, mailModel });
       return HttpHelper.CREATED();

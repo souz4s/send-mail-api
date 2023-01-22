@@ -6,6 +6,7 @@ import { router } from "../config/index.ts";
 export const App = () => {
   const app = new Application();
   app.use(oakCors());
-  app.use(() => router);
+  app.use(router.routes());
+  app.use(router.allowedMethods());
   return app;
 };

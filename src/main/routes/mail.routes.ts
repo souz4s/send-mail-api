@@ -6,9 +6,7 @@ import { makeDenomailerSendMailController } from "../factories/controller/index.
 const mailRoutes = new Router();
 
 mailRoutes.post("/mail", (context) => {
-  context.response.body = oakRouterAdapter(
-    makeDenomailerSendMailController(),
-  );
+  context.response.body = oakRouterAdapter(makeDenomailerSendMailController());
 });
 
 export { mailRoutes };

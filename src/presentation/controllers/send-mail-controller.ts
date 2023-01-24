@@ -9,7 +9,7 @@ export class SendMailController implements Controller {
     request: Controller.Request,
   ): Promise<HttpResponse<Controller.Response>> => {
     const { auth, mailModel } = request;
-    if (!auth || !mailModel.from || !mailModel.to || mailModel.subject) {
+    if (!auth || !mailModel.from || !mailModel.to || !mailModel.subject) {
       return HttpHelper.BAD_REQUEST(
         new MissingParametersError().errorDetails,
       ) as HttpResponse<Controller.Response>;

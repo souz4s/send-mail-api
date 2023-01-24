@@ -19,3 +19,6 @@ tests/
 
 # Environment variables
 .env
+
+# IDE configuration
+.vscode

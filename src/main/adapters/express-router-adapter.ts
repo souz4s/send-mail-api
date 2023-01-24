@@ -13,7 +13,7 @@ export const expressRouterAdapter = (controller: Controller) => {
       res.status(httpResponse.status).json(httpResponse.body);
     } else {
       res.status(httpResponse.status).json({
-        message: httpResponse.body as string,
+        message: httpResponse.body,
       });
     }
   };

@@ -1,4 +1,4 @@
-export type HttpResponse<T = Record<string, unknown>> = {
+export type HttpResponse<T> = {
   status: number;
   message: string;
   body?: T;

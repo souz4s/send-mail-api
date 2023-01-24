@@ -13,12 +13,6 @@ export class HttpHelper {
     body: error,
   });
 
-  static NOT_ACCEPTABLE = <T>(data: T): HttpResponse<T> => ({
-    status: 406,
-    message: "Not acceptable",
-    body: data,
-  });
-
   static INTERNAL_SERVER_ERROR = (
     error: HttpError,
   ): HttpResponse<HttpError> => ({

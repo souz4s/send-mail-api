@@ -1,1 +1,1 @@
-export type HttpError = Record<string, unknown>;
+export type HttpError = string | Record<string, unknown>;

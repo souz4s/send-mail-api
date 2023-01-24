@@ -1,12 +1,12 @@
-import { Router } from "https://deno.land/x/oak@v11.1.0/mod.ts";
+import { Router } from "npm:express@^4.18.1";
 
-import { oakRouterAdapter } from "../adapters/index.ts";
+import { expressRouterAdapter } from "../adapters/index.ts";
 import { makeDenomailerSendMailController } from "../factories/controller/index.ts";
 
-const mailRoutes = new Router();
-
-mailRoutes.post("/mail", (context) => {
-  context.response.body = oakRouterAdapter(makeDenomailerSendMailController());
-});
+const mailRoutes = Router();
+mailRoutes.post(
+  "/mail",
+  expressRouterAdapter(makeDenomailerSendMailController()),
+);
 
 export { mailRoutes };

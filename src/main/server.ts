@@ -1,13 +1,12 @@
 import { App, Env } from "./config/index.ts";
 
-const startServer = async () => {
+const startServer = () => {
   try {
     const app = App();
-    app.addEventListener(
-      "listen",
+    app.listen(
+      Env.PORT,
       () => console.log(`\n> Server is running on port ${Env.PORT}`),
     );
-    await app.listen({ port: Env.PORT });
   } catch (err) {
     console.error(err);
     Deno.exit(1);

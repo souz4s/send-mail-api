@@ -19,7 +19,7 @@ export class MailRepository implements SendMailAdapter {
       this.client = new SMTPClient(connectionOptions);
       await this.client.send(params.mailModel);
     } catch (error) {
-      throw error;
+      console.log(error);
     }
   }
 }

@@ -1,5 +1,5 @@
 export type HttpResponse<T> = {
   status: number;
-  message: string;
+  message?: string;
   body?: T;
 };

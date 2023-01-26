@@ -3,6 +3,6 @@ export class MissingParametersError extends Error {
   constructor() {
     super("Missing required parameters");
     this.name = "Missing Parameters Error";
-    this.errorDetails = { error: this.name, message: super.message };
+    this.errorDetails = { error: this.name };
   }
 }

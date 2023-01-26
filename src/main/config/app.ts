@@ -1,12 +1,12 @@
-import cors from "npm:cors@^2.8.5";
-import express from "npm:express@^4.18.1";
+import { oakCors } from "https://deno.land/x/cors@v1.2.2/mod.ts";
+import { Application } from "https://deno.land/x/oak@v11.1.0/mod.ts";
 
 import { router } from "./index.ts";
 
 export const App = () => {
-  const app = express();
-  app.use(cors());
-  app.use(express.json());
-  app.use(router);
+  const app = new Application();
+  app.use(oakCors());
+  app.use(router.routes());
+  app.use(router.allowedMethods());
   return app;
 };

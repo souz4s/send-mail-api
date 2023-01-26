@@ -2,6 +2,6 @@ export type MailModel = {
   from: string;
   to: string;
   subject: string;
-  content?: string;
+  content: string;
   html?: string;
 };

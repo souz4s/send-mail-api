@@ -14,6 +14,7 @@ export declare namespace Controller {
   };
   export type Response = {
     status: number;
+    message?: string;
     body: string;
   };
 }

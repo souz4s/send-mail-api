@@ -1,3 +1,3 @@
-import { SMTPClient } from "https://deno.land/x/denomailer@1.5.2/mod.ts";
+import { SmtpClient } from "https://deno.land/x/smtp@v0.7.0/mod.ts";
 
-export { SMTPClient };
+export const denomailerClient = new SmtpClient();

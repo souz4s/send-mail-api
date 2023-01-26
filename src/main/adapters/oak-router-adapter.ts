@@ -13,12 +13,8 @@ export const oakRouterAdapter = (controller: Controller) => {
       ...(await context.request.body().value || {}),
     };
     const httpResponse = await controller.handle(request);
-    if (httpResponse.status >= 200 && httpResponse.status <= 299) {
-      context.response.status = httpResponse.status;
-      context.response.body = httpResponse.body || httpResponse.message;
-    } else {
-      context.response.status = httpResponse.status;
-      context.response.body = { response: httpResponse.body };
-    }
+    const { status, body, message } = httpResponse;
+    context.response.status = status;
+    context.response.body = body || message;
   };
 };

@@ -1,8 +1,9 @@
-import { Router } from "npm:express@^4.18.1";
-
 import { mailRoutes } from "../routes/index.ts";
 
-const router = Router();
-router.use(mailRoutes);
+import { Router } from "https://deno.land/x/oak@v11.1.0/mod.ts";
+
+const router = new Router();
+router.use(mailRoutes.routes());
+router.use(mailRoutes.allowedMethods());
 
 export { router };

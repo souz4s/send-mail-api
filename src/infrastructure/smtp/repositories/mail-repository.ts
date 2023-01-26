@@ -1,5 +1,5 @@
 import { SendMailAdapter } from "../../../data/protocols/index.ts";
-import { denomailerClient } from "../../denomailer/index.ts";
+import { smtpClient } from "../../smtp/index.ts";
 
 import "https://deno.land/x/dotenv@v3.2.0/load.ts";
 
@@ -11,9 +11,9 @@ export class MailRepository implements SendMailAdapter {
       port: Number(SMTP_PORT),
       ...auth,
     };
-    denomailerClient.connect(connectionOptions)
-      .then(() => denomailerClient.send(mailModel))
-      .catch((error) => {
+    smtpClient.connect(connectionOptions)
+      .then(() => smtpClient.send(mailModel))
+      .catch((error: string | undefined) => {
         throw new Error(error);
       });
   }

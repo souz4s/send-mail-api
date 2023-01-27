@@ -1,0 +1,8 @@
+{
+  "imports": {
+    "smtp/": "https://deno.land/x/smtp@v0.7.0/",
+    "dotenv/": "https://deno.land/x/dotenv@v3.2.0/",
+    "oak/": "https://deno.land/x/oak@v11.1.0/",
+    "oakCors/": "https://deno.land/x/cors@v1.2.2/"
+  }
+}

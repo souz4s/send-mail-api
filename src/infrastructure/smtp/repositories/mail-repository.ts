@@ -13,6 +13,7 @@ export class MailRepository implements SendMailAdapter {
     };
     smtpClient.connect(connectionOptions)
       .then(() => smtpClient.send(mailModel))
+      .then(() => smtpClient.close())
       .catch((error: string | undefined) => {
         throw new Error(error);
       });

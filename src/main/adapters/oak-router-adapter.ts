@@ -3,7 +3,7 @@ import type {
   ParamsDictionary,
 } from "../../presentation/protocols/index.ts";
 
-import { RouterContext } from "https://deno.land/x/oak@v11.1.0/mod.ts";
+import { RouterContext } from "oak/router.ts";
 
 export const oakRouterAdapter = (controller: Controller) => {
   return async (

@@ -1,3 +1,3 @@
-import { SmtpClient } from "smtp/smtp.ts";
+import { SmtpClient } from "denomailer/mod.ts";
 
 export const smtpClient = new SmtpClient();

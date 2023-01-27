@@ -13,6 +13,7 @@ export class MailRepository implements SendMailAdapter {
     };
     denomailerClient.connect(connectionOptions)
       .then(() => denomailerClient.send(mailModel))
+      .then(() => denomailerClient.close())
       .catch((error: string | undefined) => {
         throw new Error(error);
       });

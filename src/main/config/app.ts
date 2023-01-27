@@ -1,12 +1,12 @@
-import cors from "cors";
-import express from "express";
+import { router } from "./index.ts";
 
-import { router } from "@/main/config";
+import { oakCors } from "oakCors/oakCors.ts";
+import { Application } from "oak/application.ts";
 
 export const App = () => {
-  const app = express();
-  app.use(cors());
-  app.use(express.json());
-  app.use(router);
+  const app = new Application();
+  app.use(oakCors());
+  app.use(router.routes());
+  app.use(router.allowedMethods());
   return app;
 };

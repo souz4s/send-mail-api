@@ -1,9 +1,12 @@
-import { AuthModel, MailModel } from "@/domain/models";
+import { AuthModel, MailModel } from "../../domain/models/index.ts";
 
 export interface SendMailAdapter {
-  sendMail: (params: SendMailAdapter.Params) => Promise<void>;
+  sendMail(params: SendMailAdapter.Params): void;
 }
 
-export namespace SendMailAdapter {
-  export type Params = { auth: AuthModel; mailModel: MailModel };
+export declare namespace SendMailAdapter {
+  export type Params = {
+    auth: AuthModel;
+    mailModel: MailModel;
+  };
 }

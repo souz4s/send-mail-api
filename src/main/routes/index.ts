@@ -1,1 +1,1 @@
-export * from "./mail-routes";
+export * from "./mail-routes.ts";

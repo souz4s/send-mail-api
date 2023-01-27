@@ -1,8 +1,9 @@
-import { Router } from "express";
+import { mailRoutes } from "../routes/index.ts";
 
-import { mailRoutes } from "@/main/routes";
+import { Router } from "oak/router.ts";
 
-const router = Router();
-router.use(mailRoutes);
+const router = new Router();
+router.use(mailRoutes.routes());
+router.use(mailRoutes.allowedMethods());
 
-export { router, mailRoutes };
+export { router };

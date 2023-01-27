@@ -1,7 +1,6 @@
-import { makeNodemailerSendMail } from "@/main/factories/use-cases/nodemailer";
-import { SendMailController } from "@/presentation/controllers";
+import { makeDenomailerSendMail } from "../use-cases/denomailer/index.ts";
+import { SendMailController } from "../../../presentation/controllers/index.ts";
 
-export const makeNodemailerSendMailController = () => {
-  const controller = new SendMailController(makeNodemailerSendMail());
-  return controller;
+export const makeDenomailerSendMailController = (): SendMailController => {
+  return new SendMailController(makeDenomailerSendMail());
 };

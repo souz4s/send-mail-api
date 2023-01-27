@@ -1,1 +1,1 @@
-export * from "./express-router-adapter";
+export * from "./oak-router-adapter.ts";

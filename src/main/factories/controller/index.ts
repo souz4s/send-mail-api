@@ -1,1 +1,1 @@
-export * from "./send-mail-controller";
+export * from "./send-mail-controller.ts";

@@ -1,23 +1,23 @@
-import { HttpResponse } from "@/presentation/protocols";
+import { HttpResponse } from "../protocols/index.ts";
+import { HttpError } from "../helpers/index.ts";
 
 export class HttpHelper {
-  static CREATED = (): HttpResponse<void> => ({
-    statusCode: 201,
+  static CREATED = <T>(): HttpResponse<T> => ({
+    status: 201,
     message: "Successfully created",
   });
 
-  static BAD_REQUEST = (error: string | object): HttpResponse<string | object> => ({
-    statusCode: 400,
+  static BAD_REQUEST = (error: HttpError): HttpResponse<HttpError> => ({
+    status: 400,
+    message: "Bad request",
     body: error,
   });
 
-  static NOT_ACCEPTABLE = <T>(data: T): HttpResponse<T> => ({
-    statusCode: 406,
-    body: data,
-  });
-
-  static INTERNAL_SERVER_ERROR = (error: string | object): HttpResponse<string | object> => ({
-    statusCode: 500,
+  static INTERNAL_SERVER_ERROR = (
+    error: HttpError,
+  ): HttpResponse<HttpError> => ({
+    status: 500,
+    message: "Internal Server Error",
     body: error,
   });
 }

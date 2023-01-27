@@ -1,7 +1,7 @@
 export type MailModel = {
   from: string;
   to: string;
-  subject?: string;
-  text?: string;
+  subject: string;
+  content: string;
   html?: string;
 };

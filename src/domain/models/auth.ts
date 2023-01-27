@@ -1,4 +1,4 @@
 export type AuthModel = {
-  user: string;
-  pass: string;
+  username: string;
+  password: string;
 };

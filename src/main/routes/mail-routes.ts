@@ -1,11 +1,12 @@
-/* eslint-disable @typescript-eslint/no-misused-promises */
-import { Router } from "express";
+import { oakRouterAdapter } from "../adapters/index.ts";
+import { makeDenomailerSendMailController } from "../factories/controller/index.ts";
 
-import { expressRouterAdapter } from "@/main/adapters";
-import { makeNodemailerSendMailController } from "@/main/factories/controller";
+import { Router } from "oak/router.ts";
 
-const mailRoutes = Router();
-
-mailRoutes.post("/mail", expressRouterAdapter(makeNodemailerSendMailController()));
+const mailRoutes = new Router();
+mailRoutes.post(
+  "/mail",
+  oakRouterAdapter(makeDenomailerSendMailController()),
+);
 
 export { mailRoutes };

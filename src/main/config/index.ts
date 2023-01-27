@@ -1,3 +1,3 @@
-export * from "./app";
-export * from "./env";
-export * from "./router";
+export * from "./app.ts";
+export * from "./env.ts";
+export * from "./router.ts";

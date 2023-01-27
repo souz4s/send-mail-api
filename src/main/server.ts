@@ -5,7 +5,7 @@ const startServer = async () => {
     const app = App();
     app.addEventListener(
       "listen",
-      () => console.log(`\n> Server is running on port ${Env.PORT}`),
+      () => console.log(`\n> Server is running`),
     );
     await app.listen({ port: Env.PORT });
   } catch (err) {

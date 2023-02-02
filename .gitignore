@@ -14,9 +14,6 @@
 # Dependency directories
 deps/
 
-# Test files
-tests/
-
 # Environment variables
 .env
 

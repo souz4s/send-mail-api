@@ -1,7 +1,7 @@
 import { oakRouterAdapter } from "../adapters/index.ts";
 import { makeDenomailerSendMailController } from "../factories/controller/index.ts";
 
-import { Router } from "https://deno.land/x/oak@v11.1.0/router.ts";
+import { Router } from "oak/router.ts";
 
 const mailRoutes = new Router();
 mailRoutes.post(

@@ -1,4 +1,5 @@
 # Deno specific files
+deno.lock
 .deno_plugins.ts
 .deno_plugins.js
 .lock.json
